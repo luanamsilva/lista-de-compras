@@ -1,0 +1,39 @@
+.header{
+  display: flex;
+  flex-direction: column;
+    background: var(--gray-300);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input{
+    width: 100%;
+    padding: 0.675rem;
+    background: var(--white);
+    border: none;
+    border-radius: 3px;
+   
+  }
+  
+  
+  .inputArea{
+    display: flex;
+    gap: 1rem;
+   margin-bottom: -1rem;
+   width: 100%;
+   max-width: 30rem;
+   
+  }
+  
+  .buttonAdd{
+    padding: 0.375rem;
+    background: var(--brown-400);
+    color: var(--gray-200);
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .buttonAdd:hover{
+    opacity: 0.7;
+  }
