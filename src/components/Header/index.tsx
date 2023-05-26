@@ -1,8 +1,10 @@
 import styles from './Header.module.css';
 import { useState } from 'react';
 
-
-export const Header = () => {
+type Props = {
+  onSubmit: (itemTitle:string) => void
+}
+export const Header = ({onSubmit}:Props) => {
   const [itemAdd, setItemAdd] = useState([]);
   const [textInputItem, setTextInputItem] = useState('');
 
@@ -15,6 +17,7 @@ export const Header = () => {
 
     setItemAdd([...itemAdd, textInputItem]);
     setTextInputArea('');
+    onSubmit(itemAdd)
   }
 
   return (
