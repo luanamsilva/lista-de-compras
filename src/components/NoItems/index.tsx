@@ -1,8 +1,8 @@
 import cart from '../../assets/16246.jpg'
-import styles from './ListItems.module.css'
+import styles from './NoItems.module.css'
 
 
-export const ListItems = () => {
+export const NoItems = () => {
   
   return (
     <div className={styles.container}>

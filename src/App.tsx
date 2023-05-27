@@ -1,5 +1,5 @@
 import {Header} from './components/Header'
-import {ListItems} from './components/ListItems'
+import {NoItems} from './components/NoItems'
 import {useState} from 'react'
 import {Items} from './components/Items'
 import {ItemsProps} from './types/ItemsProps'
@@ -22,6 +22,8 @@ function App() {
     <>
 
 <Header onSubmit={handleAddItem}/>
+{listItemAdd == 0 &&
+<NoItems/>}
 <div>
   {listItemAdd.map((item)=>(
   <Items key={item.id} item={item}/>
@@ -29,7 +31,7 @@ function App() {
   
 </div>
 <main>
-<ListItems/>
+
 </main>
 
     </>
