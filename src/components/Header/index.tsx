@@ -2,38 +2,39 @@ import styles from './Header.module.css';
 import { useState, FormEvent, ChangeEvent } from 'react';
 
 type Props = {
-  onSubmit: (itemTitle:string) => void
+  onSubmit: (itemTitle: string) => void
 }
 export const Header = ({onSubmit}:Props) => {
-  const [itemAdd, setItemAdd] = useState([]);
-  const [textInputItem, setTextInputItem] = useState('');
+  const [itemAdd, setItemAdd] = useState([] as string []);
+  
 
-  function handleAddTextInput(event: ChangeEvent <HTMLInputElement>) {
-    setTextInputItem(event.target.value);
-  }
 
   function handleAddItem(event: FormEvent <HTMLFormElement>) {
     event.preventDefault();
+    onSubmit(itemAdd);
+    setItemAdd('')
+  }
 
-    setItemAdd([...itemAdd, textInputItem]);
-    setTextInputArea('');
-    onSubmit(itemAdd)
+  function handleChangeInput(event: ChangeEvent<HTMLInpuntElement>) {
+    setItemAdd(event.target.value)
   }
 
   return (
     <div className={styles.header}>
       <h1>Lista de Compras</h1>
-      <div className={styles.inputArea}>
+      <form className={styles.inputArea} onSubmit={handleAddItem}>
+      
         <input
           className={styles.input}
+          type="text"
           placeholder="Digite o item a ser adicionado"
-          value={textInputItem}
-          onChange={handleAddTextInput}
+          value={itemAdd}
+          onChange={handleChangeInput}
         />
-        <button className={styles.buttonAdd} onSubmit={handleAddItem}>
+        <button type='submit' className={styles.buttonAdd} >
           Adicionar
         </button>
-      </div>
+      </form>
     </div>
   );
 };

@@ -1,16 +1,18 @@
 import {Header} from './components/Header'
 import {ListItems} from './components/ListItems'
 import {useState} from 'react'
+import {Items} from './components/Items'
+import {ItemsProps} from './types/ItemsProps'
 
 function App() {
 
-  const [listItemAdd, setListItemAdd] = useState([])
+  const [listItemAdd, setListItemAdd] = useState<ItemsProps[]>([])
 
 
   function handleAddItem(itemTitle:string) {
     const newListItemAdd = [...listItemAdd];
     newListItemAdd.push({
-      id: id.lehgth +1,
+      id: listItemAdd.lehgth +1,
       title: itemTitle
     })
     setListItemAdd(newListItemAdd)
@@ -20,13 +22,15 @@ function App() {
     <>
 
 <Header onSubmit={handleAddItem}/>
-
-{listItemAdd.map((item)=>(
-<ListItems
-key={item.id}
-item={item}/>
-))}
-
+<div>
+  {listItemAdd.map((item)=>(
+  <Items key={item.id} item={item}/>
+  ))}
+  
+</div>
+<main>
+<ListItems/>
+</main>
 
     </>
   )
