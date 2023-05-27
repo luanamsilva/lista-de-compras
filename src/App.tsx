@@ -21,7 +21,12 @@ function App() {
 
 <Header onSubmit={handleAddItem}/>
 
-<ListItems/>
+{listItemAdd.map((item)=>(
+<ListItems
+key={item.id}
+item={item}/>
+))}
+
 
     </>
   )

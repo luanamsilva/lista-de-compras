@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
 type Props = {
   onSubmit: (itemTitle:string) => void
@@ -8,11 +8,11 @@ export const Header = ({onSubmit}:Props) => {
   const [itemAdd, setItemAdd] = useState([]);
   const [textInputItem, setTextInputItem] = useState('');
 
-  function handleAddTextInput() {
+  function handleAddTextInput(event: ChangeEvent <HTMLInputElement>) {
     setTextInputItem(event.target.value);
   }
 
-  function handleAddItem() {
+  function handleAddItem(event: FormEvent <HTMLFormElement>) {
     event.preventDefault();
 
     setItemAdd([...itemAdd, textInputItem]);
