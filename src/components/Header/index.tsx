@@ -16,6 +16,8 @@ export const Header = ({onSubmit}:Props) => {
   }
 
   function handleChangeInput(event: ChangeEvent<HTMLInpuntElement>) {
+    event.target.setCustomValidity("")
+
     setItemAdd(event.target.value)
   }
 
