@@ -15,7 +15,7 @@ export const Items = ({item, onDelete}:Props) => {
     <div className={styles.container}>
 
 {item.title} 
-<button onClick={()=> onDelete(item.title)}><Trash/></button>
+<button onClick={()=> onDelete(item.title)} className={styles.buttonDelete}><Trash size={18}/></button>
     </div>
   )
 }
