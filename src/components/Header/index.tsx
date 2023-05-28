@@ -19,6 +19,10 @@ export const Header = ({onSubmit}:Props) => {
     setItemAdd(event.target.value)
   }
 
+  function handleInputInvalid(event: InvalidEvent <HTMLInputElement>) {
+    event.target.setCustomValidity("Campo obrigatório")
+  }
+
   return (
     <div className={styles.header}>
       <h1>Lista de Compras</h1>
@@ -30,6 +34,8 @@ export const Header = ({onSubmit}:Props) => {
           placeholder="Digite o item a ser adicionado"
           value={itemAdd}
           onChange={handleChangeInput}
+          onInvalid={handleInputInvalid}
+          required
         />
         <button type='submit' className={styles.buttonAdd} >
           Adicionar
