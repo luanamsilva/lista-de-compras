@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background:#CDBFB5;
+  background:var(--brow-100);
   margin: 8px auto;
   border-radius: 8px;
   font-size: 1.3rem;

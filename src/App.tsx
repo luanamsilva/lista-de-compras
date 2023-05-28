@@ -20,6 +20,10 @@ function App() {
     setListItemAdd(newListItemAdd)
   }
 
+  function onDelete(itemTitle:string) {
+    const newItemDelete = listItemAdd.filter((item) => item.title !== itemTitle)
+    setListItemAdd(newItemDelete)
+  }
   return (
     <>
 
@@ -31,7 +35,11 @@ function App() {
 <img className={styles.cart} src={cart} alt="cart" /> 
 <div className={styles.listItems}>
   {listItemAdd.map((item)=>(
-  <Items key={item.id} item={item}/>
+  <Items 
+  onDelete={onDelete}
+  key={item} 
+  item={item} 
+  />
   ))}
  </div> 
 </div>}
