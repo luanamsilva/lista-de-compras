@@ -3,6 +3,8 @@ import {NoItems} from './components/NoItems'
 import {useState} from 'react'
 import {Items} from './components/Items'
 import {ItemsProps} from './types/ItemsProps'
+import cart from './assets/16246.jpg'
+import styles from './App.module.css'
 
 function App() {
 
@@ -22,14 +24,17 @@ function App() {
     <>
 
 <Header onSubmit={handleAddItem}/>
-{listItemAdd == 0 &&
-<NoItems/>}
-<div>
+{listItemAdd == 0 ?
+<NoItems/> : 
+
+<div className={styles.container}>
+<img className={styles.cart} src={cart} alt="cart" /> 
+<div className={styles.listItems}>
   {listItemAdd.map((item)=>(
   <Items key={item.id} item={item}/>
   ))}
-  
-</div>
+ </div> 
+</div>}
 <main>
 
 </main>

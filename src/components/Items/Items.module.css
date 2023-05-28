@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
-  max-width: 40rem;
-  margin: 3rem auto;
+  background:#CDBFB5;
+  margin: 8px auto;
   border-radius: 8px;
   font-size: 1.3rem;
+  width:100%;
 }
+
