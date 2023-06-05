@@ -1,9 +1,10 @@
 .container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background:var(--brow-100);
   margin: 8px auto;
+  padding: 0.375rem;
   border-radius: 8px;
   font-size: 1.3rem;
   width:90%;
@@ -14,8 +15,7 @@
   background: none;
   border: none;
   color: var(--brown-600);
- 
-
+  display: block;
 }
 
 .buttonDelete:hover{

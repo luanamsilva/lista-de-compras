@@ -21,7 +21,7 @@ export const Header = ({onSubmit}:Props) => {
     setItemAdd(event.target.value)
   }
 
-  function handleInputInvalid(event: InvalidEvent <HTMLInputElement>) {
+  function handleInputInvalid(event: ChangeEvent<HTMLInpuntElement>) {
     event.target.setCustomValidity("Campo obrigatório")
   }
 
